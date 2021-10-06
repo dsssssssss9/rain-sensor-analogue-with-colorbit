@@ -1,0 +1,16 @@
+let Reading = 0
+let colorbit_51bit = colorbit.initColorBit(DigitalPin.P1, BitColorMode.RGB)
+colorbit_51bit.setBrightness(32)
+colorbit_51bit.showColorIcon(ColorIcon.ChristmasTree, colorbit.colors(BitColors.Red))
+basic.showIcon(IconNames.Heart)
+led.enable(true)
+basic.pause(200)
+basic.clearScreen()
+colorbit_51bit.clear()
+basic.forever(function () {
+    Reading = pins.analogReadPin(AnalogPin.P2)
+    basic.showNumber(1023 - Reading)
+    colorbit_51bit.showBarGraph(1023 - Reading, 1023)
+    basic.pause(100)
+    basic.clearScreen()
+})
