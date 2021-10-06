@@ -11,6 +11,5 @@ basic.forever(function () {
     Reading = pins.analogReadPin(AnalogPin.P2)
     basic.showNumber(1023 - Reading)
     colorbit_51bit.showBarGraph(1023 - Reading, 1023)
-    basic.pause(100)
     basic.clearScreen()
 })
